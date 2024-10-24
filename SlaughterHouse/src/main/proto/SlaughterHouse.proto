@@ -1,0 +1,22 @@
+// SlaughterHouse.proto
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.pro3.slaughterhouse.grpc";
+
+service SlaughterHouseService {
+  rpc getAnimalsByProductId(ProductIdRequest) returns (SlaughterHouseResponse);
+  rpc getProductsByAnimalId(AnimalIdRequest) returns (SlaughterHouseResponse);
+}
+
+message AnimalIdRequest {
+  int32 animalId = 2;
+}
+
+message ProductIdRequest {
+  int32 productId = 1;
+}
+
+message SlaughterHouseResponse {
+  string message = 1;
+}
